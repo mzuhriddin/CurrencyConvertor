@@ -241,13 +241,13 @@ public class BotServiceImpl implements BotService {
 
     @Override
     public int getVerificationCode(String phoneNumber) {
-        String ACCOUNT_SID = "AC6adfe7695546dd2d44e7d9e973c75ad3";
-        String AUTH_TOKEN = "1aa7fc5529abde91064c718d1d272a6d";
+        String ACCOUNT_SID = "ACCOUNT_SID";
+        String AUTH_TOKEN = "AUTH_TOKEN";
         init(ACCOUNT_SID, AUTH_TOKEN);
 
         int randomCode = (int) (Math.random() * 89999 + 10000);
         Message.creator(new PhoneNumber(phoneNumber), // to
-                new PhoneNumber("+17752566634"), // from
+                new PhoneNumber("+123456789"), // from
                 String.valueOf(randomCode)).create();
         return randomCode;
     }
